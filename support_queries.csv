@@ -1,0 +1,121 @@
+query,intent
+I forgot my password,password_reset
+How do I reset my password,password_reset
+My account is locked,password_reset
+Can you help me reset my login credentials,password_reset
+I cannot log in to my computer,password_reset
+My password expired and I need a new one,password_reset
+I keep getting invalid password error,password_reset
+How do I change my windows password,password_reset
+I am locked out of my active directory account,password_reset
+Password reset not working via email link,password_reset
+My network password expired today,password_reset
+I need to unlock my user account,password_reset
+SSO login is failing with wrong credentials,password_reset
+Reset my corporate email password please,password_reset
+I cannot access my account due to wrong password,password_reset
+Forgot login PIN for laptop,password_reset
+My password does not meet complexity requirements,password_reset
+How to set up a new password for the first time,password_reset
+Account temporarily locked after too many attempts,password_reset
+Self-service password reset portal is not working,password_reset
+Outlook is not sending emails,email_issue
+I am not receiving any emails,email_issue
+My email is not working,email_issue
+Cannot access my email account,email_issue
+Emails going to spam folder,email_issue
+My mailbox is full and I cannot send messages,email_issue
+Outlook keeps crashing when I open it,email_issue
+Cannot login to webmail,email_issue
+Email attachments are not opening,email_issue
+I am not getting email notifications,email_issue
+Shared mailbox not showing in Outlook,email_issue
+Calendar invites are not syncing,email_issue
+Out of office reply is not working,email_issue
+Email signature disappeared after update,email_issue
+Cannot send emails to external recipients,email_issue
+My distribution list emails are bouncing,email_issue
+Emails stuck in outbox,email_issue
+Cannot add a new email account in Outlook,email_issue
+Email is taking too long to load,email_issue
+Getting mailbox quota exceeded error,email_issue
+My internet connection is very slow,network_issue
+The network is down in the office,network_issue
+I cannot connect to the company network,network_issue
+WiFi keeps disconnecting,network_issue
+No internet access at my workstation,network_issue
+Network drive is not accessible,network_issue
+I cannot reach shared folders on the server,network_issue
+My computer has no IP address,network_issue
+The ethernet port is not working at my desk,network_issue
+Network speed is extremely slow today,network_issue
+I cannot ping the server from my machine,network_issue
+Cannot access intranet website,network_issue
+DNS resolution is failing,network_issue
+Getting network timeout errors on all websites,network_issue
+WiFi password is wrong and I cannot connect,network_issue
+Office router seems to be down,network_issue
+Network adapter showing disconnected,network_issue
+Cannot join the wireless network,network_issue
+Packet loss on video calls over office network,network_issue
+The file server is unreachable from my device,network_issue
+VPN is not connecting,vpn_issue
+GlobalProtect VPN keeps disconnecting,vpn_issue
+I cannot access office resources from home,vpn_issue
+VPN connection failed with authentication error,vpn_issue
+Cisco AnyConnect shows error when connecting,vpn_issue
+VPN is very slow when working remotely,vpn_issue
+VPN disconnects every few minutes,vpn_issue
+Cannot install VPN client on my laptop,vpn_issue
+I forgot my VPN credentials,vpn_issue
+Two-factor authentication for VPN is not working,vpn_issue
+VPN certificate has expired,vpn_issue
+VPN connected but I still cannot reach internal systems,vpn_issue
+VPN is blocking access to certain websites,vpn_issue
+I need to set up VPN on a new device,vpn_issue
+VPN keeps asking for credentials repeatedly,vpn_issue
+Remote desktop not working through VPN,vpn_issue
+VPN client update broke my connection,vpn_issue
+Error 619 when connecting to VPN,vpn_issue
+Split tunneling configuration needed on VPN,vpn_issue
+My VPN token is not generating codes,vpn_issue
+Printer is offline and not printing,printer_issue
+I cannot print from my computer,printer_issue
+Printer shows error state,printer_issue
+My print job is stuck in the queue,printer_issue
+Printer paper jam that will not clear,printer_issue
+Cannot find the shared printer on the network,printer_issue
+Printer is printing blank pages,printer_issue
+Print quality is very poor and smudged,printer_issue
+I need to install a printer driver,printer_issue
+Printer running out of ink or toner,printer_issue
+Cannot print from mobile device,printer_issue
+Printer is printing wrong paper size,printer_issue
+Double-sided printing is not working,printer_issue
+Colour printing not working on the office printer,printer_issue
+Printer is not responding to print commands,printer_issue
+I accidentally deleted the printer from my PC,printer_issue
+Shared network printer access denied,printer_issue
+Printer making strange noise during printing,printer_issue
+PDF files will not print correctly,printer_issue
+Wireless printer connectivity lost after update,printer_issue
+Software is crashing on my computer,software_issue
+I need to install Microsoft Office,software_issue
+My application is not opening,software_issue
+Software update is failing with an error,software_issue
+I need a license key for Adobe software,software_issue
+Application keeps freezing and not responding,software_issue
+Cannot uninstall a program from my computer,software_issue
+Software installation is stuck at 50 percent,software_issue
+I need access to a specific business application,software_issue
+Getting a software compatibility error,software_issue
+Application shows trial version expired,software_issue
+I need to update my browser to the latest version,software_issue
+Teams or Zoom is not working properly,software_issue
+Antivirus software blocking a legitimate program,software_issue
+I need Python or development tools installed,software_issue
+My software needs an upgrade to a newer version,software_issue
+Cannot download software from the company portal,software_issue
+Application requires admin rights to run,software_issue
+Software database connection error on startup,software_issue
+I need a specific plugin or extension for my work,software_issue

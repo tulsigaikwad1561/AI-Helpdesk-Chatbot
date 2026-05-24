@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aegis AI – Intelligent IT Service Management Dashboard</title>
+  
+  <!-- Modern Typography: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for Slick Interface -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Premium CSS -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="dark-theme">
+  <div class="app-container">
+    
+    <!-- ==========================================
+         SIDEBAR NAVIGATION
+         ========================================== -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">
+          <i class="fa-solid fa-microchip-ai"></i>
+        </div>
+        <div class="brand-text">
+          <h2>AEGIS AI</h2>
+          <span>ITSM Helpdesk Hub</span>
+        </div>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <button class="nav-item active" data-tab="chat-tab">
+          <i class="fa-solid fa-comments"></i>
+          <span>Live AI Chat</span>
+        </button>
+        <button class="nav-item" data-tab="tickets-tab" id="nav-tickets-btn">
+          <i class="fa-solid fa-ticket-simple"></i>
+          <span>Ticket Desk</span>
+          <span class="badge badge-pulse" id="ticket-count-badge">0</span>
+        </button>
+
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">TG</div>
+          <div class="user-info">
+            <span class="user-name">Tulsi Gaikwad</span>
+            <span class="user-role">IT Specialist</span>
+          </div>
+        </div>
+        <div class="system-status">
+          <span class="status-indicator online"></span>
+          <span class="status-text">Server: Live (v1.0)</span>
+        </div>
+      </div>
+    </aside>
+    
+    <!-- ==========================================
+         MAIN CONTENT AREA
+         ========================================== -->
+    <main class="main-content">
+      
+      <!-- HEADER -->
+      <header class="app-header">
+        <div class="header-title">
+          <h1 id="tab-title">Live AI Support Desk</h1>
+          <p id="tab-subtitle" class="text-muted">Chat with Aegis AI to resolve IT issues or raise tickets instantly</p>
+        </div>
+        <div class="header-actions">
+          <div class="system-clock">
+            <i class="fa-regular fa-clock"></i>
+            <span id="live-time">--:--:--</span>
+          </div>
+          <button class="btn btn-secondary" id="reset-session-btn" title="Clear Chat History">
+            <i class="fa-solid fa-rotate-left"></i> Reset
+          </button>
+        </div>
+      </header>
+      
+      <!-- ==========================================
+           TAB CONTENT: LIVE AI CHAT
+           ========================================== -->
+      <section id="chat-tab" class="tab-pane active">
+        <div class="chat-dashboard-layout">
+          <!-- Chat Window -->
+          <div class="chat-card">
+            <div class="chat-messages" id="chat-messages-container">
+              <!-- Welcome message -->
+              <div class="msg-row bot-msg">
+                <div class="msg-avatar bot-av"><i class="fa-solid fa-robot"></i></div>
+                <div class="msg-bubble">
+                  <p>Welcome back, <strong>Tulsi</strong>. I am <strong>Aegis AI</strong>, your dedicated IT Service Management assistant.</p>
+                  <p>How can I assist you today? You can describe any IT incident, such as:</p>
+                  <ul>
+                    <li><em>"I need to reset my Windows password"</em> (Password issues)</li>
+                    <li><em>"Outlook is refusing to sync emails"</em> (Email issues)</li>
+                    <li><em>"I can't connect to the corporate network"</em> (Network issues)</li>
+                    <li><em>"VPN disconnected and throwing security error 619"</em> (VPN issues)</li>
+                    <li><em>"The printer on the 3rd floor is showing a paper jam"</em> (Printer issues)</li>
+                    <li><em>"I need to install Adobe Acrobat Pro for a client demo"</em> (Software issues)</li>
+                  </ul>
+                  <span class="msg-meta">Aegis AI Agent • Just Now</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="chat-input-bar">
+              <form id="chat-form">
+                <input type="text" id="chat-input" placeholder="Describe your IT issue in detail..." autocomplete="off" required>
+                <button type="submit" class="btn btn-primary" id="chat-send-btn">
+                  <span>Send</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          
+          <!-- Live Diagnostics HUD -->
+          <div class="hud-card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-wave-square"></i> Real-time AI Inference HUD</h3>
+            </div>
+            <div class="card-body">
+              <div class="hud-item">
+                <span class="hud-label">Classified Intent:</span>
+                <span class="hud-value intent-badge" id="hud-intent">--</span>
+              </div>
+              <div class="hud-item">
+                <span class="hud-label">Confidence Score:</span>
+                <div class="confidence-bar-container">
+                  <div class="confidence-bar" id="hud-confidence-bar" style="width: 0%"></div>
+                </div>
+                <span class="hud-value font-mono" id="hud-confidence">0.00%</span>
+              </div>
+              <div class="hud-item">
+                <span class="hud-label">Incident Priority:</span>
+                <span class="hud-value priority-badge" id="hud-priority">--</span>
+              </div>
+              <div class="hud-item">
+                <span class="hud-label">Generated Ticket:</span>
+                <span class="hud-value font-mono" id="hud-ticket-id">--</span>
+              </div>
+              <div class="hud-item">
+                <span class="hud-label">Assigned Group:</span>
+                <span class="hud-value" id="hud-assignee">--</span>
+              </div>
+              <div class="hud-item">
+                <span class="hud-label">SLA Countdown:</span>
+                <span class="hud-value" id="hud-sla">--</span>
+              </div>
+              
+              <div class="hud-divider"></div>
+              
+              <h4>Intent Probability Breakdown</h4>
+              <div class="probability-list" id="hud-probability-list">
+                <div class="text-muted text-center py-3">Submit a message to view live model probabilities.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- ==========================================
+           TAB CONTENT: TICKET DESK
+           ========================================== -->
+      <section id="tickets-tab" class="tab-pane">
+        <div class="ticket-desk-layout">
+          <!-- Ticket List -->
+          <div class="ticket-list-card">
+            <div class="card-header search-header">
+              <h3><i class="fa-solid fa-list-check"></i> Active Incidents</h3>
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="ticket-search" placeholder="Search ticket ID, query, or team...">
+              </div>
+            </div>
+            <div class="ticket-list-container" id="ticket-list">
+              <!-- Dynamically populated -->
+              <div class="text-center py-5 text-muted">
+                <i class="fa-solid fa-inbox fa-3x mb-3"></i>
+                <p>No tickets logged yet. Chat with the bot to auto-create tickets!</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Ticket Details Pane -->
+          <div class="ticket-detail-card" id="ticket-detail-pane">
+            <div class="detail-empty-state">
+              <i class="fa-solid fa-circle-info fa-3x mb-3 text-muted"></i>
+              <h3>Select a ticket</h3>
+              <p class="text-muted">Click on any incident from the list to view its full audit history and simulate ITSM workflow updates.</p>
+            </div>
+            
+            <div class="detail-content hidden" id="ticket-detail-content">
+              <!-- Loaded dynamically -->
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      
+
+      
+    </main>
+  </div>
+
+  <!-- Notification Banner -->
+  <div class="notification-toast" id="notification-toast">
+    <i class="fa-solid fa-bell"></i>
+    <span id="notification-message">Notification message goes here</span>
+  </div>
+
+  <!-- Modern Vanilla JS Application Controller -->
+  <script src="/static/app.js"></script>
+</body>
+</html>
